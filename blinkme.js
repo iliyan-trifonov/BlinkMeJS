@@ -1,5 +1,5 @@
 /*
- BlinkingJS by Iliyan Trifonov
+ BlinkMeJS by Iliyan Trifonov
  example:
  var blink = new BlinkMe({
  id: 'elem_id',
