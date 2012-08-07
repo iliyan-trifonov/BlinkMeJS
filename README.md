@@ -12,7 +12,7 @@ Demo Url:
 
 
 
-1. Use 2 classes to blink a text:
+# Use 2 classes to blink a text:
 
 html:
 
@@ -37,7 +37,7 @@ css:
 
 
 
-2. Blink 3 texts with one BlinkMeJS instance:
+# Blink 3 texts with one BlinkMeJS instance:
 
 html:
     
@@ -54,7 +54,7 @@ js:
 
 
 
-3. Make effects using a couple of BlinkMeJS instances + callback and helper functions:
+# Make effects using a couple of BlinkMeJS instances + callback and helper functions:
 
 html:
 
