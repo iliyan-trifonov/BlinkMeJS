@@ -1,11 +1,7 @@
-/*
- BlinkMeJS by Iliyan Trifonov
- example:
- var blink = new BlinkMe({
- id: 'elem_id',
- classes: {normal: 'class_normal', blinked: 'class_blink'},
- });
- */
+// BlinkMe JavaScript library v1.0
+// (c) Iliyan Trifonov (Ljancho) - http://www.iliyan-trifonov.com/
+// Project Url: https://github.com/Ljancho/BlinkMeJS
+// License: MIT (http://www.opensource.org/licenses/mit-license.php)
 (function(){
     function BlinkMe(params)
     {
