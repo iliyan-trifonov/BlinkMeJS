@@ -8,7 +8,7 @@ Examples:
 
 Demo Url:
     
-    <a href="http://iliyan-trifonov.com/BlinkMeJS/" target="_blank">http://iliyan-trifonov.com/BlinkMeJS/</a>
+    [http://iliyan-trifonov.com/BlinkMeJS/](http://iliyan-trifonov.com/BlinkMeJS/)
 
 
 
