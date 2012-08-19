@@ -8,7 +8,7 @@ Examples:
 
 Demo Url:
     
-    [http://iliyan-trifonov.com/BlinkMeJS/](http://iliyan-trifonov.com/BlinkMeJS/)
+    [BlinkMeJS Demo](http://iliyan-trifonov.com/BlinkMeJS/ "BlinkMeJS @ iliyan-trifonov.com")
 
 
 
