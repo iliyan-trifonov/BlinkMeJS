@@ -6,9 +6,7 @@ JS class for making blinking texts switching between 2 colors or by using classe
 
 Examples:
 
-Demo Url:
-    
-    [BlinkMeJS Demo](http://iliyan-trifonov.com/BlinkMeJS/ "BlinkMeJS @ iliyan-trifonov.com")
+Demo Url: [BlinkMeJS Demo](http://iliyan-trifonov.com/BlinkMeJS/ "BlinkMeJS @ iliyan-trifonov.com")
 
 
 
