@@ -112,6 +112,11 @@
         var el = null;
         for (var i = 0; i < this.params.id.length; i++)
         {
+    		if (typeof this.params.id[i] == 'undefined')
+			{
+				this.params.id.splice(i, 1);
+				continue;
+			}
             el = document.getElementById(this.params.id[i]);
             this.els = this.els.concat(el);
             if(!!this.classes) this.manageClass(el, this.params.classes.normal, 'add');
