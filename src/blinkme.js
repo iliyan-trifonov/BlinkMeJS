@@ -110,18 +110,26 @@
     BlinkMe.prototype.init = function()
     {
         var el = null;
+        var ids = new Array();
         for (var i = 0; i < this.params.id.length; i++)
         {
     		if (typeof this.params.id[i] == 'undefined')
 			{
-				this.params.id.splice(i, 1);
 				continue;
 			}
             el = document.getElementById(this.params.id[i]);
+            if (!el) {
+                continue;
+            }
             this.els = this.els.concat(el);
-            if(!!this.classes) this.manageClass(el, this.params.classes.normal, 'add');
-            else el.style.color = this.params.colors.normal;
+            ids[ids.length] = this.params.id[i];
+            if(!!this.classes) {
+                this.manageClass(el, this.params.classes.normal, 'add');
+            } else {
+                el.style.color = this.params.colors.normal;
+            }
         }
+        this.params.id = ids;
     }
 
     BlinkMe.prototype.manageClass = function(el, name, action)
