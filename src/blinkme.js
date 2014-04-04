@@ -1,6 +1,6 @@
 // BlinkMe JavaScript library v1.0
-// (c) Iliyan Trifonov (Ljancho) - http://www.iliyan-trifonov.com/
-// Project Url: https://github.com/Ljancho/BlinkMeJS
+// (c) Iliyan Trifonov - http://www.iliyan-trifonov.com/
+// Project Url: https://github.com/iliyan-trifonov/BlinkMeJS
 // License: MIT (http://www.opensource.org/licenses/mit-license.php)
 (function(){
     function BlinkMe(params)
@@ -11,7 +11,7 @@
         }
 
         if (typeof params == 'undefined' || typeof params.id == 'undefined'
-            || (typeof params.colors == 'undefined' && typeof params.classes == 'undefined')
+            || (typeof params.colors == 'undefined' && typeof params.class == 'undefined' && typeof params.classes == 'undefined')
             || (typeof params.colors != 'undefined' && (typeof params.colors.normal == 'undefined' || typeof params.colors.blinked == 'undefined'))
             || (typeof params.classes != 'undefined' && (typeof params.classes.normal == 'undefined' || typeof params.classes.blinked == 'undefined'))
             )
@@ -32,7 +32,10 @@
         }
 
         this.params = params;
-        this.classes = !!params.classes && !!params.classes.normal && !!params.classes.blinked;
+        this.classes = !!params.class || (!!params.classes && (!!params.classes.normal || !!params.classes.blinked));
+        if (!!params.class) {
+            params.classes = {'normal': params.class};
+        }
         this.text_timer = null;
         this.blinked = false;
         this.els = [];
@@ -113,10 +116,10 @@
         var ids = new Array();
         for (var i = 0; i < this.params.id.length; i++)
         {
-    		if (typeof this.params.id[i] == 'undefined')
-			{
-				continue;
-			}
+            if (typeof this.params.id[i] == 'undefined')
+            {
+                continue;
+            }
             el = document.getElementById(this.params.id[i]);
             if (!el) {
                 continue;

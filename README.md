@@ -13,7 +13,19 @@ Examples:
 
 Demo Url: [BlinkMeJS Demo](http://iliyan-trifonov.com/BlinkMeJS/ "BlinkMeJS @ iliyan-trifonov.com")
 
+# The usual way:
 
+html:
+
+    <div id="mahdiv">Look, Ma'! I'm blinkin'!</div>
+
+js:
+
+    BlinkMe({ id: 'mahdiv', class: 'mahclass', interval: 500 });
+
+css:
+
+    .mahclass{ background-color: red; }
 
 # Use 2 classes to blink a text:
 
