@@ -24,7 +24,7 @@ html:
 js:
 
 ```js
-BlinkMe({ id: 'mahdiv', class: 'mahclass', interval: 500 });
+BlinkMe({ id: 'mahdiv', 'class': 'mahclass', interval: 500 });
 ```
 
 css:

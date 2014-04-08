@@ -1,8 +1,33 @@
-// BlinkMe JavaScript library v1.0
+// BlinkMe JavaScript library v1.1
 // (c) Iliyan Trifonov - http://www.iliyan-trifonov.com/
 // Project Url: https://github.com/iliyan-trifonov/BlinkMeJS
 // License: MIT (http://www.opensource.org/licenses/mit-license.php)
 (function(){
+    //.bind() compatibility: source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+    if (!Function.prototype.bind) {
+        Function.prototype.bind = function (oThis) {
+            if (typeof this !== "function") {
+                // closest thing possible to the ECMAScript 5 internal IsCallable function
+                throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+            }
+
+            var aArgs = Array.prototype.slice.call(arguments, 1),
+                fToBind = this,
+                fNOP = function () {},
+                fBound = function () {
+                    return fToBind.apply(this instanceof fNOP && oThis
+                        ? this
+                        : oThis,
+                        aArgs.concat(Array.prototype.slice.call(arguments)));
+                };
+
+            fNOP.prototype = this.prototype;
+            fBound.prototype = new fNOP();
+
+            return fBound;
+        };
+    }
+    //BlinkMe
     function BlinkMe(params)
     {
         if (false === (this instanceof BlinkMe))
@@ -11,7 +36,7 @@
         }
 
         if (typeof params == 'undefined' || typeof params.id == 'undefined'
-            || (typeof params.colors == 'undefined' && typeof params.class == 'undefined' && typeof params.classes == 'undefined')
+            || (typeof params.colors == 'undefined' && typeof params['class'] == 'undefined' && typeof params.classes == 'undefined')
             || (typeof params.colors != 'undefined' && (typeof params.colors.normal == 'undefined' || typeof params.colors.blinked == 'undefined'))
             || (typeof params.classes != 'undefined' && (typeof params.classes.normal == 'undefined' || typeof params.classes.blinked == 'undefined'))
             )
@@ -32,9 +57,9 @@
         }
 
         this.params = params;
-        this.classes = !!params.class || (!!params.classes && (!!params.classes.normal || !!params.classes.blinked));
-        if (!!params.class) {
-            params.classes = {'normal': params.class};
+        this.classes = !!params['class'] || (!!params.classes && (!!params.classes.normal || !!params.classes.blinked));
+        if (!!params['class']) {
+            params.classes = {'normal': params['class']};
         }
         this.text_timer = null;
         this.blinked = false;
