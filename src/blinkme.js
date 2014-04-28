@@ -1,4 +1,4 @@
-// BlinkMe JavaScript library v1.1
+// BlinkMe JavaScript library v1.2
 // (c) Iliyan Trifonov - http://www.iliyan-trifonov.com/
 // Project Url: https://github.com/iliyan-trifonov/BlinkMeJS
 // License: MIT (http://www.opensource.org/licenses/mit-license.php)
@@ -59,7 +59,7 @@
         this.params = params;
         this.classes = !!params['class'] || (!!params.classes && (!!params.classes.normal || !!params.classes.blinked));
         if (!!params['class']) {
-            params.classes = {'normal': params['class']};
+            params.classes = {'normal': params['class'], 'blinked': ''};
         }
         this.text_timer = null;
         this.blinked = false;
@@ -164,19 +164,28 @@
     {
         if (this.hasClassList)
         {
-            if (action == 'add') el.classList.add(name);
-            else if (action == 'remove') el.classList.remove(name);
+            if (typeof name != 'undefined' && name != '') {
+                if (action == 'add') {
+                    el.classList.add(name);
+                } else if (action == 'remove') {
+                    el.classList.remove(name);
+                }
+            }
         }
         else
         {
             var reg = new RegExp('\\b'+name+'\\b', 'g');
             if (action == 'add')
             {
-                if (!el.className.match(reg)) el.className += ' ' + name;
+                if (!el.className.match(reg)) {
+                    el.className += ' ' + name;
+                }
             }
             else if (action == 'remove')
             {
-                if (!!el.className.match(reg)) el.className = el.className.replace(reg, '');
+                if (!!el.className.match(reg)) {
+                    el.className = el.className.replace(reg, '');
+                }
             }
         }
     }
