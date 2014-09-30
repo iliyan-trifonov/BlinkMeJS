@@ -1,5 +1,6 @@
 BlinkMeJS
 =========
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/iliyan-trifonov/BlinkMeJS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Blink a text with style!
 Pure JavaScript! No external libs required!
