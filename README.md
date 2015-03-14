@@ -6,7 +6,7 @@ Blink a text with style!
 Pure JavaScript! No external libs required!
 Change text colors, images, transform objects, use multiple options!
 
-BlinkMeJS is a class for making blinking texts by switching between 2 colors or by using classes.
+BlinkMeJS is a JavaScript library for making blinking texts by switching between 2 colors or by using css class names.
 With classes and callback functions one can do more than a blinking text like moving/animating objects, etc.
 
 
